@@ -1,7 +1,7 @@
 require File.expand_path('../lib/scenario/version', __FILE__)
 
 Gem::Specification.new do |spec|
-  spec.name          = "scenario"
+  spec.name          = "circumstance"
   spec.version       = Scenario::VERSION
   spec.authors       = [
     "Manfred Stienstra",
@@ -12,14 +12,14 @@ Gem::Specification.new do |spec|
     "matthewvcasper@gmail.com"
   ]
   spec.summary = <<-EOF
-  Scenario is a thin wrapper around test setup.
+  Circumstance is a thin wrapper around test setup.
   EOF
   spec.description = <<-EOF
-  Scenario allows you to register and evaluate setup block globally in your
+  Circumstance allows you to register and evaluate setup block globally in your
   test suite. This is useful when you want to share big blocks of factory
   setups between tests.
   EOF
-  spec.homepage      = "http://github.com/procore/scenario"
+  spec.homepage      = "http://github.com/procore/circumstance"
   spec.license       = "MIT"
 
   spec.files         = [

@@ -1,11 +1,11 @@
-# Scenario
+# Circumstance
 
 Scenario allows you to register and evaluate setup block globally in your test suite. This is useful when you want to share big blocks of factory setups between tests.
 
 ## Example
 
 Scenario ships with RSpec helpers.
-
+```ruby
     require 'scenario'
 
     RSpec.configure do |config|
@@ -23,9 +23,10 @@ Scenario ships with RSpec helpers.
         expect(nuts_and_bolts.name).to_not be_blank
       end
     end
+```
 
 But you can also use it with other test suites.
-
+```ruby
     require 'scenario'
 
     class ActiveSupport::TestCase
@@ -48,9 +49,10 @@ But you can also use it with other test suites.
         assert_equal @number_count, Number.count
       end
     end
+```
 
 Nesting scenarios can be useful.
-
+```ruby
     Scenario.define(:company) do
       let(:company) { create(:company) }
     end
@@ -63,16 +65,16 @@ Nesting scenarios can be useful.
         company_with_client 
       end
     end
-
+```
 The `load_scenario` method tries to figure out if a scenario was previously loaded so you don't load them multiple times for the same context. If you do need to evaluate a scenario multiple times or directly on a test class for some reason, that's possible too.
-
+```ruby
     Scenario.evaluate(ActiveRecord::Base, :setup_mock_responses)
 
     describe PunyHuman do
       Scenario.evaluate(self, :setup_mock_responses)  
       Scenario.evaluate(self, :setup_mock_responses)  
     end
-
+```
 ## What's happening to my tests?
 
 When logging to $stderr is good enough for you, just lower the log level.
@@ -92,3 +94,7 @@ Scenario is really tiny so any changes have big consequences. Please create an i
 3. Write the code
 4. Request a pull
 5. Bask in glory
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
