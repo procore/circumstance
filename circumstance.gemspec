@@ -1,8 +1,8 @@
-require File.expand_path('../lib/scenario/version', __FILE__)
+require File.expand_path('../lib/circumstance/version', __FILE__)
 
 Gem::Specification.new do |spec|
   spec.name          = "circumstance"
-  spec.version       = Scenario::VERSION
+  spec.version       = Circumstance::VERSION
   spec.authors       = [
     "Manfred Stienstra",
     "Matt Casper"
@@ -24,10 +24,10 @@ Gem::Specification.new do |spec|
 
   spec.files         = [
     'LICENSE.txt',
-    'lib/scenario.rb',
-    'lib/scenario/helpers.rb',
-    'lib/scenario/registry.rb',
-    'lib/scenario/version.rb'
+    'lib/circumstance.rb',
+    'lib/circumstance/helpers.rb',
+    'lib/circumstance/registry.rb',
+    'lib/circumstance/version.rb'
   ]
   spec.require_paths = ["lib"]
 
